@@ -1,0 +1,1 @@
+g++ src/main.cpp Weapon/Weapon.cpp -o build/main -std=c++23 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11

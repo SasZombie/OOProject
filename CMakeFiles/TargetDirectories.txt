@@ -1,0 +1,3 @@
+/home/saszombie/Coding/OOProject/CMakeFiles/main.dir
+/home/saszombie/Coding/OOProject/CMakeFiles/edit_cache.dir
+/home/saszombie/Coding/OOProject/CMakeFiles/rebuild_cache.dir
