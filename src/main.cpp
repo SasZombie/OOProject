@@ -9,7 +9,8 @@
 
 enum class gameState {
     MainMenu,
-    MainGame
+    MainGame,
+    DeathScreen
 };
 
 
@@ -17,6 +18,8 @@ int main()
 {
     constexpr size_t MAX_PLAYERS = 2;
     constexpr size_t width = 1920, height = 1080;
+    const raylib::Vector2 player1Start{width/2 - 400, 800};
+    const raylib::Vector2 player2Start{width/2 + 400, 800};
 
     std::vector<sas::Animation> animations;
     gameState state = gameState::MainMenu;
@@ -126,9 +129,16 @@ int main()
     {
         float delta = GetFrameTime();
         BeginDrawing();
+        window.ClearBackground(BLACK);
+
+        if(IsKeyPressed(KEY_R))
+        {
+            state = gameState::MainMenu;
+            currentPlayer = 0;
+            playerSelecting = "Player 1 choosing\n";
+        }
         
 
-        window.ClearBackground(BLACK);
         if(state == gameState::MainMenu)
         {
             raylib::DrawText(playerSelecting, width/2 - 150 , 100, 20, RAYWHITE);
@@ -139,7 +149,7 @@ int main()
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
                 playerSelecting = "Player 2 choosing\n";
-                players[currentPlayer] = new sas::Pugilist{100, 10, bow, {width/2, 800}, pugilistText};
+                players[currentPlayer] = new sas::Pugilist{100, 10, bow, currentPlayer == 1 ? player1Start : player2Start , pugilistText};
                 players[currentPlayer]->addAnimation(PugilistAnimation);
                 ++currentPlayer;
             }
@@ -150,7 +160,7 @@ int main()
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
                 playerSelecting = "Player 2 choosing\n";
-                players[currentPlayer] = new sas::Knight{100, 10, bow, {width/2, 800}, knightText};
+                players[currentPlayer] = new sas::Knight{100, 10, bow, currentPlayer == 1 ? player1Start : player2Start, knightText};
                 players[currentPlayer]->addAnimation(Melee);
                 ++currentPlayer;
             }
@@ -162,16 +172,17 @@ int main()
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
                 playerSelecting = "Player 2 choosing\n";
-                players[currentPlayer] = new sas::Mage{100, 10, bow, {width/2, 800}, mageText};
+                players[currentPlayer] = new sas::Mage{100, 10, bow, currentPlayer == 1 ? player1Start : player2Start , mageText};
                 players[currentPlayer]->addAnimation(MageAnimation);
                 ++currentPlayer;
             }
 
             if(currentPlayer == 2)
                 state = gameState::MainGame;
-        }else
-        {
 
+                
+        }else if(state == gameState::MainGame)
+        {
 
             DrawRectangle(10, 10, 2 * players[0]->getHealth(), 20, RED);
             DrawRectangleLines(10, 10, 2 * players[0]->getMaxHealth(), 20, RAYWHITE);
@@ -182,7 +193,6 @@ int main()
 
             position = 2 * players[1]->getMaxHealth();
             DrawRectangleLines(width - position, 10, position, 20, RAYWHITE);
-
             DrawLine(0, 900, 1920, 900, RAYWHITE);
 
             if(IsKeyPressed(KEY_A) || IsKeyDown(KEY_A))
@@ -234,6 +244,14 @@ int main()
             animations.erase(std::remove_if(animations.begin(), animations.end(), [](const sas::Animation &obj){
                 return obj.getFinishStatus();}), animations.end());
 
+            if(players[0]->getHealth() <= 0 || players[1]->getHealth() <=0)
+            {
+                state = gameState::DeathScreen;
+            }
+
+        }else
+        {
+            DrawText("Press R to restart", width/2 - 300, height/2 - 20, 60, RAYWHITE);
         }
         EndDrawing();
 

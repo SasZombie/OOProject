@@ -21,6 +21,7 @@ namespace sas
     private:
         raylib::Vector2 position;
         raylib::Texture2D& sprite;
+        short currentWeapon = 0;
     protected:
 
         Animation animation;
@@ -32,6 +33,7 @@ namespace sas
         Character(size_t nHp, size_t nSpeed, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite);
         Character(size_t nHp, size_t nSpeed, const Weapon& nWeapon, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite);
 
+        void changeWeapon() noexcept;
         void moveLeft(float deltaT) noexcept;
         void moveRight(float deltaT) noexcept;
         void takeDamage(size_t damage) noexcept;
