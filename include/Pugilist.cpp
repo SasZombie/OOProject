@@ -1,10 +1,10 @@
-#include "../headers/Archer.hpp"
+#include "../headers/Pugilist.hpp"
 
 #include <iostream>
 static constexpr size_t bonusRange = 10;
 static constexpr size_t bonusDamage = 10;
 
-sas::Archer::Archer(size_t nHp, size_t nSpeed, const Weapon& nWeapon, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite)
+sas::Pugilist::Pugilist(size_t nHp, size_t nSpeed, const Weapon& nWeapon, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite)
     : Character(nHp, nSpeed, nPosition, nSprite)
 {
     this->equipWeapon(nWeapon);
@@ -14,13 +14,13 @@ sas::Archer::Archer(size_t nHp, size_t nSpeed, const Weapon& nWeapon, const rayl
 }
 
 
-sas::Archer::Archer(size_t nHp, size_t nSpeed, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite)
+sas::Pugilist::Pugilist(size_t nHp, size_t nSpeed, const raylib::Vector2& nPosition, raylib::Texture2D& nSprite)
     : Character(nHp, nSpeed, nPosition, nSprite)
 {
     this->hp = maxHP;
 }
 
-void sas::Archer::equipWeapon(const Weapon &newWeap) noexcept
+void sas::Pugilist::equipWeapon(const Weapon &newWeap) noexcept
 {
     this->equipedWeapon = newWeap;
 
@@ -31,9 +31,12 @@ void sas::Archer::equipWeapon(const Weapon &newWeap) noexcept
         equipedWeapon.addDamage(bonusDamage);
         equipedWeapon.addRange(bonusRange);
     }
+
+    addWeapon(newWeap);
+
 }
 
-void sas::Archer::useSkill() noexcept
+void sas::Pugilist::useSkill() noexcept
 {
     this->equipedWeapon.addDamage(bonusDamage);
 }

@@ -3,7 +3,7 @@
 #include <array>
 #include <algorithm>
 
-#include "../headers/Archer.hpp"
+#include "../headers/Pugilist.hpp"
 #include "../headers/Knight.hpp"
 #include "../headers/Mage.hpp"
 
@@ -29,25 +29,29 @@ int main()
     SetTargetFPS(60);
     window.SetPosition(GetMonitorPosition(0));
 
+    raylib::Texture portraitKnight{"Assets/knightsas.png"};
+    raylib::Texture portraitMage{"Assets/magesas.png"};
+    raylib::Texture portraitFighter{"Assets/pugilistsas.png"};
+
 
     raylib::Image bowSprite("Assets/shadowFlameBow.png");
     sas::Weapon bow{sas::WeaponType::Ranged, 10, 600, "shadowflameBOW", bowSprite};
-    raylib::Texture2D archerText{"Assets/mogus.png"};
+    raylib::Texture2D pugilistText{"Assets/pugilistmic.png"};
 
     raylib::Image swordSprite("Assets/shadowFlameBow.png");
     sas::Weapon sword{sas::WeaponType::Melee, 10, 10, "shadowflameBOW", swordSprite};
-    raylib::Texture2D knightText{"Assets/mogus.png"};
+    raylib::Texture2D knightText{"Assets/knightmic.png"};
 
     raylib::Image rodSprite("Assets/shadowFlameBow.png");
     sas::Weapon rod{sas::WeaponType::Magic, 10, 10, "shadowflameBOW", rodSprite};
-    raylib::Texture2D mageText{"Assets/mogus.png"};
+    raylib::Texture2D mageText{"Assets/magemic.png"};
 
     size_t currentPlayer = 0;
 
-    sas::Animation ArcherAnimation;
-    ArcherAnimation.addCustomAnimation([&](Vector2& startPos, const Vector2& endPos, float smoothness, float step)
+    sas::Animation PugilistAnimation;
+    PugilistAnimation.addCustomAnimation([&](Vector2& startPos, const Vector2& endPos, float smoothness, float step)
     {
-        DrawCircle(startPos.x + 60, startPos.y, 10, RED);
+        DrawCircle(startPos.x + 60, startPos.y, 10, GREEN);
         switch (smoothness > 0)
         {
         case true:
@@ -96,7 +100,7 @@ int main()
     sas::Animation MageAnimation;
     MageAnimation.addCustomAnimation([&](Vector2& startPos, const Vector2& endPos, float smoothness, float step)
     {
-        DrawRing({startPos.x + 60, startPos.y}, 30, 60, 0, 360, 32, RED);
+        DrawRing({startPos.x + 60, startPos.y}, 30, 60, 0, 360, 32, PURPLE);
         
         switch (smoothness > 0)
         {
@@ -118,11 +122,11 @@ int main()
         return false;
     });
 
-
     while (!window.ShouldClose())
     {
         float delta = GetFrameTime();
         BeginDrawing();
+        
 
         window.ClearBackground(BLACK);
         if(state == gameState::MainMenu)
@@ -131,17 +135,17 @@ int main()
 
             constexpr size_t sizeIcons = 60;
             float dx = width/3 + 2 * sizeIcons, dy=height/3;
-            DrawRectangle(dx, dy, sizeIcons, sizeIcons, RED);
+            DrawTexture(portraitFighter, dx, dy, WHITE);
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
                 playerSelecting = "Player 2 choosing\n";
-                players[currentPlayer] = new sas::Archer{100, 10, bow, {width/2, 800}, archerText};
-                players[currentPlayer]->addAnimation(ArcherAnimation);
+                players[currentPlayer] = new sas::Pugilist{100, 10, bow, {width/2, 800}, pugilistText};
+                players[currentPlayer]->addAnimation(PugilistAnimation);
                 ++currentPlayer;
             }
 
             dx = dx + 2 * sizeIcons;
-            DrawRectangle(dx, dy, sizeIcons, sizeIcons, RED);
+            DrawTexture(portraitKnight, dx, dy, WHITE);
 
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
@@ -153,7 +157,8 @@ int main()
 
 
             dx = dx + 2 * sizeIcons;
-            DrawRectangle(dx, dy, sizeIcons, sizeIcons, RED);
+            DrawTexture(portraitMage, dx, dy, WHITE);
+
             if(CheckCollisionPointRec(GetMousePosition(), Rectangle{dx, dy, sizeIcons, sizeIcons}) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
             {
                 playerSelecting = "Player 2 choosing\n";
@@ -189,7 +194,6 @@ int main()
             {
                 players[0]->moveRight(delta);
             }
-            players[0]->getSprite().Draw(players[0]->getPosition());
 
             if(IsKeyPressed(KEY_LEFT) || IsKeyDown(KEY_LEFT))
             {
@@ -218,6 +222,7 @@ int main()
                 }
             }
 
+            
             players[0]->getSprite().Draw(players[0]->getPosition());
             players[1]->getSprite().Draw(players[1]->getPosition());
 

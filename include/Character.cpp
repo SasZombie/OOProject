@@ -20,6 +20,20 @@ void sas::Character::move(float deltaT, const Vector2 &newPos) noexcept
     if(this->position.x > 1850)
         this->position.x = 1850; 
 }
+void sas::Character::addWeapon(const Weapon& newWeap) noexcept
+{
+    if(this->inventory.size() < 3)
+    {
+        this->inventory[this->inventory.size() - 1] = newWeap;
+    }
+    else
+    {
+        this->inventory[2] = this->inventory[1];
+        this->inventory[1] = this->inventory[0];
+        this->inventory[0] = newWeap;
+    }
+}
+
 
 std::optional<sas::Animation> sas::Character::attack(Character &enemy) noexcept 
 {

@@ -13,8 +13,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 
 
 # add_executable(main src/main.cpp ${SOURCES})
-# add_executable(test src/test.cpp include/Archer.cpp include/Character.cpp include/Weapon.cpp include/Knight.cpp include/Mage.cpp include/Animation.cpp)
+# add_executable(test src/test.cpp include/Pugilist.cpp include/Character.cpp include/Weapon.cpp include/Knight.cpp include/Mage.cpp include/Animation.cpp)
 
-add_executable(main src/main.cpp include/Archer.cpp include/Character.cpp include/Weapon.cpp include/Knight.cpp include/Mage.cpp include/Animation.cpp)
+add_executable(main src/main.cpp include/Pugilist.cpp include/Character.cpp include/Weapon.cpp include/Knight.cpp include/Mage.cpp include/Animation.cpp)
 # target_link_libraries(test raylib GL m pthread dl rt X11)
 target_link_libraries(main raylib GL m pthread dl rt X11)

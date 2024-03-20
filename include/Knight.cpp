@@ -21,11 +21,13 @@ void sas::Knight::equipWeapon(const Weapon &newWeap) noexcept
 {
     this->equipedWeapon = newWeap;
 
+
     if(this->equipedWeapon.getType() == WeaponType::Melee)
     {
         this->equipedWeapon.addDamage(bonusDamage);
         this->maxHP = this->maxHP + bonusHealth;
     }
+    addWeapon(newWeap);
 }
 
 void sas::Knight::useSkill() noexcept

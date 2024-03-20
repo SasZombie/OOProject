@@ -153,30 +153,6 @@ include/Animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Animation.cpp.s
 .PHONY : include/Animation.cpp.s
 
-include/Archer.o: include/Archer.cpp.o
-.PHONY : include/Archer.o
-
-# target to build an object file
-include/Archer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Archer.cpp.o
-.PHONY : include/Archer.cpp.o
-
-include/Archer.i: include/Archer.cpp.i
-.PHONY : include/Archer.i
-
-# target to preprocess a source file
-include/Archer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Archer.cpp.i
-.PHONY : include/Archer.cpp.i
-
-include/Archer.s: include/Archer.cpp.s
-.PHONY : include/Archer.s
-
-# target to generate assembly for a file
-include/Archer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Archer.cpp.s
-.PHONY : include/Archer.cpp.s
-
 include/Character.o: include/Character.cpp.o
 .PHONY : include/Character.o
 
@@ -249,6 +225,30 @@ include/Mage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Mage.cpp.s
 .PHONY : include/Mage.cpp.s
 
+include/Pugilist.o: include/Pugilist.cpp.o
+.PHONY : include/Pugilist.o
+
+# target to build an object file
+include/Pugilist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Pugilist.cpp.o
+.PHONY : include/Pugilist.cpp.o
+
+include/Pugilist.i: include/Pugilist.cpp.i
+.PHONY : include/Pugilist.i
+
+# target to preprocess a source file
+include/Pugilist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Pugilist.cpp.i
+.PHONY : include/Pugilist.cpp.i
+
+include/Pugilist.s: include/Pugilist.cpp.s
+.PHONY : include/Pugilist.s
+
+# target to generate assembly for a file
+include/Pugilist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/include/Pugilist.cpp.s
+.PHONY : include/Pugilist.cpp.s
+
 include/Weapon.o: include/Weapon.cpp.o
 .PHONY : include/Weapon.o
 
@@ -309,9 +309,6 @@ help:
 	@echo "... include/Animation.o"
 	@echo "... include/Animation.i"
 	@echo "... include/Animation.s"
-	@echo "... include/Archer.o"
-	@echo "... include/Archer.i"
-	@echo "... include/Archer.s"
 	@echo "... include/Character.o"
 	@echo "... include/Character.i"
 	@echo "... include/Character.s"
@@ -321,6 +318,9 @@ help:
 	@echo "... include/Mage.o"
 	@echo "... include/Mage.i"
 	@echo "... include/Mage.s"
+	@echo "... include/Pugilist.o"
+	@echo "... include/Pugilist.i"
+	@echo "... include/Pugilist.s"
 	@echo "... include/Weapon.o"
 	@echo "... include/Weapon.i"
 	@echo "... include/Weapon.s"

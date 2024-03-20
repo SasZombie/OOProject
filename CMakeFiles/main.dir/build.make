@@ -83,19 +83,19 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saszombie/Coding/OOProject/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
 
-CMakeFiles/main.dir/include/Archer.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/include/Archer.cpp.o: include/Archer.cpp
-CMakeFiles/main.dir/include/Archer.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saszombie/Coding/OOProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/include/Archer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/include/Archer.cpp.o -MF CMakeFiles/main.dir/include/Archer.cpp.o.d -o CMakeFiles/main.dir/include/Archer.cpp.o -c /home/saszombie/Coding/OOProject/include/Archer.cpp
+CMakeFiles/main.dir/include/Pugilist.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/include/Pugilist.cpp.o: include/Pugilist.cpp
+CMakeFiles/main.dir/include/Pugilist.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/saszombie/Coding/OOProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/include/Pugilist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/include/Pugilist.cpp.o -MF CMakeFiles/main.dir/include/Pugilist.cpp.o.d -o CMakeFiles/main.dir/include/Pugilist.cpp.o -c /home/saszombie/Coding/OOProject/include/Pugilist.cpp
 
-CMakeFiles/main.dir/include/Archer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/include/Archer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saszombie/Coding/OOProject/include/Archer.cpp > CMakeFiles/main.dir/include/Archer.cpp.i
+CMakeFiles/main.dir/include/Pugilist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/include/Pugilist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/saszombie/Coding/OOProject/include/Pugilist.cpp > CMakeFiles/main.dir/include/Pugilist.cpp.i
 
-CMakeFiles/main.dir/include/Archer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/include/Archer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saszombie/Coding/OOProject/include/Archer.cpp -o CMakeFiles/main.dir/include/Archer.cpp.s
+CMakeFiles/main.dir/include/Pugilist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/include/Pugilist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/saszombie/Coding/OOProject/include/Pugilist.cpp -o CMakeFiles/main.dir/include/Pugilist.cpp.s
 
 CMakeFiles/main.dir/include/Character.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/include/Character.cpp.o: include/Character.cpp
@@ -170,7 +170,7 @@ CMakeFiles/main.dir/include/Animation.cpp.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/src/main.cpp.o" \
-"CMakeFiles/main.dir/include/Archer.cpp.o" \
+"CMakeFiles/main.dir/include/Pugilist.cpp.o" \
 "CMakeFiles/main.dir/include/Character.cpp.o" \
 "CMakeFiles/main.dir/include/Weapon.cpp.o" \
 "CMakeFiles/main.dir/include/Knight.cpp.o" \
@@ -181,7 +181,7 @@ main_OBJECTS = \
 main_EXTERNAL_OBJECTS =
 
 build/main: CMakeFiles/main.dir/src/main.cpp.o
-build/main: CMakeFiles/main.dir/include/Archer.cpp.o
+build/main: CMakeFiles/main.dir/include/Pugilist.cpp.o
 build/main: CMakeFiles/main.dir/include/Character.cpp.o
 build/main: CMakeFiles/main.dir/include/Weapon.cpp.o
 build/main: CMakeFiles/main.dir/include/Knight.cpp.o

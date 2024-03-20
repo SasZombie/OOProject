@@ -9,10 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/saszombie/Coding/OOProject/include/Animation.cpp" "CMakeFiles/main.dir/include/Animation.cpp.o" "gcc" "CMakeFiles/main.dir/include/Animation.cpp.o.d"
-  "/home/saszombie/Coding/OOProject/include/Archer.cpp" "CMakeFiles/main.dir/include/Archer.cpp.o" "gcc" "CMakeFiles/main.dir/include/Archer.cpp.o.d"
   "/home/saszombie/Coding/OOProject/include/Character.cpp" "CMakeFiles/main.dir/include/Character.cpp.o" "gcc" "CMakeFiles/main.dir/include/Character.cpp.o.d"
   "/home/saszombie/Coding/OOProject/include/Knight.cpp" "CMakeFiles/main.dir/include/Knight.cpp.o" "gcc" "CMakeFiles/main.dir/include/Knight.cpp.o.d"
   "/home/saszombie/Coding/OOProject/include/Mage.cpp" "CMakeFiles/main.dir/include/Mage.cpp.o" "gcc" "CMakeFiles/main.dir/include/Mage.cpp.o.d"
+  "/home/saszombie/Coding/OOProject/include/Pugilist.cpp" "CMakeFiles/main.dir/include/Pugilist.cpp.o" "gcc" "CMakeFiles/main.dir/include/Pugilist.cpp.o.d"
   "/home/saszombie/Coding/OOProject/include/Weapon.cpp" "CMakeFiles/main.dir/include/Weapon.cpp.o" "gcc" "CMakeFiles/main.dir/include/Weapon.cpp.o.d"
   "/home/saszombie/Coding/OOProject/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   )

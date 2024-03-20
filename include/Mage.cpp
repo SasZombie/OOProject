@@ -25,6 +25,9 @@ void sas::Mage::equipWeapon(const Weapon &newWeap) noexcept
         this->equipedWeapon.addRange(bonusRange);
         this->maxHP = this->maxHP + bonusHealth;
     }
+
+    addWeapon(newWeap);
+
 }
 
 void sas::Mage::useSkill() noexcept

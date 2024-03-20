@@ -17,12 +17,15 @@ namespace sas
         size_t hp;
         size_t speed;
         Weapon equipedWeapon;
+        std::array<Weapon, 3> inventory;
     private:
         raylib::Vector2 position;
         raylib::Texture2D& sprite;
     protected:
+
         Animation animation;
         
+        void addWeapon(const Weapon& newWeap) noexcept;
         virtual void move(float deltaT, const Vector2 &newPos) noexcept;
 
     public:
