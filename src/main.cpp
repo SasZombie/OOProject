@@ -49,6 +49,8 @@ int main()
     sas::Weapon rod{sas::WeaponType::Magic, 10, 10, "shadowflameBOW", rodSprite};
     raylib::Texture2D mageText{"Assets/magemic.png"};
 
+
+    raylib::Texture2D backgroun("Assets/back.png");
     size_t currentPlayer = 0;
 
     sas::Animation PugilistAnimation;
@@ -131,6 +133,7 @@ int main()
         BeginDrawing();
         window.ClearBackground(BLACK);
 
+
         if(IsKeyPressed(KEY_R))
         {
             state = gameState::MainMenu;
@@ -183,6 +186,9 @@ int main()
                 
         }else if(state == gameState::MainGame)
         {
+
+            backgroun.Draw();
+
 
             DrawRectangle(10, 10, 2 * players[0]->getHealth(), 20, RED);
             DrawRectangleLines(10, 10, 2 * players[0]->getMaxHealth(), 20, RAYWHITE);
