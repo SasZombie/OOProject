@@ -12,9 +12,9 @@ namespace sas
     protected:
         
         bool hasAnimation = false;
-        size_t maxHP = 100;
+        int maxHP = 100;
         
-        size_t hp;
+        int hp;
         size_t speed;
         Weapon equipedWeapon;
         std::array<Weapon, 3> inventory;
@@ -42,7 +42,7 @@ namespace sas
         
         size_t getSpeed() const noexcept;
         size_t getDamage() const noexcept;
-        size_t getHealth() const noexcept;
+        int getHealth() const noexcept;
         size_t getMaxHealth() const noexcept;
 
         const raylib::Vector2& getPosition() noexcept;

@@ -30,6 +30,7 @@ int main()
 
     raylib::Window window{width, height, "Game"};
     SetTargetFPS(60);
+
     window.SetPosition(GetMonitorPosition(0));
 
     raylib::Texture portraitKnight{"Assets/knightsas.png"};

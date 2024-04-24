@@ -86,7 +86,7 @@ size_t sas::Character::getDamage() const noexcept
     return this->equipedWeapon.getDamage();
 }
 
-size_t sas::Character::getHealth() const noexcept
+int sas::Character::getHealth() const noexcept
 {
     return this->hp;
 }
