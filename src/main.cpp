@@ -259,6 +259,7 @@ int main()
         }else
         {
             DrawText("Press R to restart", width/2 - 300, height/2 - 20, 60, RAYWHITE);
+            animations.clear();
         }
         EndDrawing();
 
